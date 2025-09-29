@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pymongo
+motor
+pydantic
+pydantic[email]
+passlib
+argon2-cffi
+python-jose[cryptography]
+
+

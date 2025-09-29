@@ -10,4 +10,6 @@ uvicorn app.main:app --reload
 ```
 npm run dev
 ```
-# ChatBot
+login should return jwt token for authentication it should be stored in local storage 
+token should be valid for 1 hour
+
