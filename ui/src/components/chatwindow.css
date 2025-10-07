@@ -3,46 +3,239 @@
   flex-direction: column;
   height: 100%;
   min-width: 0;
-  padding: 0 0 14px 0;
+  background: #fcfcfc;
+  border-radius: 25px;
+  box-shadow: 0 2px 14px rgba(34,47,62,0.04);
+  padding: 0 0 20px 0;
   overflow: hidden;
 }
+
 .messages-list {
   flex: 1;
   overflow-y: auto;
-  padding: 40px 18px 20px 18px;
-  background: #ffffff;
+  padding: 46px 32px 24px 32px;
+  background: #fff;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
+
 .input-area {
   display: flex;
   background: #fff;
-  border-top: 1px solid #ececec;
-  padding: 14px 18px;
+  border-top: 1.7px solid #eff0f3;
+  padding: 18px 30px;
   gap: 10px;
   align-items: center;
 }
+
 .input-box {
   flex: 1;
-  border: 1.5px solid #bfc9d1;
-  border-radius: 24px;
-  font-size: 1.07rem;
-  padding: 12px 20px;
+  border: 1.9px solid #e6e6ef;
+  border-radius: 14px;
+  font-size: 1.11rem;
+  color: black;
+  padding: 16px 22px;
   outline: none;
+  transition: border 0.2s, background 0.2s;
+  background: #fafafd;
 }
+
 .input-box:focus {
-  border: 1.5px solid #ffffff;
-  background: #222f3e;
+  border: 1.8px solid #ff9442;
+  background: #fffdf6;
 }
+
 .send-btn {
-  background: linear-gradient(90deg, #222f3e, #222f3e);
+  background: #ff9442;
   color: #fff;
-  padding: 11px 25px;
+  padding: 20px 20px;
   border: none;
-  border-radius: 22px;
-  font-weight: 600;
-  font-size: 1rem;
+  border-radius: 14px;
+  font-weight: bold;
+  font-size: 1.08rem;
   cursor: pointer;
-  box-shadow: 0 1px 8px rgba(139, 152, 155, 0.08);
+  box-shadow: 0 2px 8px rgba(255,148,66,0.09);
+  transition: background 0.18s;
+}
+
+.send-btn:hover, .send-btn:focus {
+  background: #ec810c;
+}
+
+/* NEW: Main Area Styles */
+.main-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 40px;
+  background: #fff;
+  text-align: center;
+}
+
+.main-tip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.05rem;
+  padding: 8px 20px;
+  margin-bottom: 30px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 1.5px solid #e5e7eb;
+}
+
+.tip-icon {
+  color: #ff9442;
+  font-size: 1.2em;
+
+}
+.addon,
+.addon:hover,
+.addon:focus,
+.addon:active,
+.side-btn,
+.side-btn:hover,
+.side-btn:focus,
+.side-btn:active {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+
+.tip-orange {
+  color: #ff9442;
+  font-weight: 600;
+}
+
+.main-logo-row {
+  margin: 20px 0;
+}
+
+.main-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+}
+
+.main-title {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.huge-input-container {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  padding: 25px 20px 10px 20px;
+  background: #fff;
+  border-radius: 16px;
+  border: 1.5px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.main-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  padding: 15px 10px;
+  margin-bottom: 15px;
+  color: #6b7280;
+  background: transparent;
+}
+
+.main-input::placeholder {
+  color: #9ca3af;
+}
+
+.main-addons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.addon {
+  border: 1.5px solid #ff9442;
+  background: #fff;
+  color: #ff9442;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  padding: 8px 16px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+
+.addon:hover {
+  background: #ff9442;
+  color: #fff;
+}
+
+.deeper-research {
+  font-weight: 600;
+}
+
+.dr-icon {
+  font-size: 1.1em;
+}
+
+
+.main-side-icons {
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  right: 55px; 
+  bottom: 25px;
+  align-items: center;
+}
+
+.side-btn {
+  background: transparent;
+  /* border: none; */
+  color: #9ca3af;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 4px;
+  transition: color 0.2s;
+}
+
+.side-btn:hover {
+  color: #6b7280;
+}
+
+.main-send-btn {
+  position: absolute;
+  right: 10px;
+  bottom: 35px;
+  background: #ff9442;
+   right: 10px;   /* Keep send button at far right */
+  bottom: 25px;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(255,148,66,0.15);
+  transition: background 0.2s;
+}
+
+.main-send-btn:hover {
+  background: #ea7f18;
+}
+.pk{
+  padding-right: 10px;
 }

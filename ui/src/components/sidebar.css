@@ -28,12 +28,13 @@
 .new-chat-btn,
 .chat-list {
   transition: opacity 0.2s;
+  border-radius: 10px;
 }
 
 
 .sidebar.collapsed .sidebar-header,
 .sidebar.collapsed .new-chat-btn{
-  background-color: #fff;
+  background-color:  #ff9442;;
 }
 .sidebar.collapsed .chat-list {
   background-color: #fff;
@@ -64,10 +65,27 @@
 .sidebar-toggle:focus {
   outline: none;
 }
+.chat-item {
+  background: #000000;
+  color: #f7f7f7;
+   /* Match New Chat */
+  padding: 8px 8px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  /* border: #ff9442; */
+  border: 1px solid #ae7040;
+  transition: background 0.18s, color 0.18s;
+}
+.chat-item.active, .chat-item:hover {
+  background: #ff9442;
+  color: #000;
+}
+
 .new-chat-btn {
   /* padding: 12px 0; */
   background: linear-gradient(90deg, #ffffff, #ffffff);
-  border-radius: 25px;
+  border: #ff9442;
+  /* border-radius: 25px; */
   /* font-weight: 500; */
   
   color: #000000; 

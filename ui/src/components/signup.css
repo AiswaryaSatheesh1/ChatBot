@@ -1,75 +1,110 @@
-body, html {
-  height: 100vh;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #ffffff;
+.sidebar {
+  /* ...existing styles, keep as is... */
+  background: #18191c;
+  justify-content: flex-start;
 }
 
-.signup-container {
- max-width: 400px;
-  width: 100%;
-  padding: 30px;
-  background-color: #222f3e;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  font-family: Arial, sans-serif;
-  border-radius: 10px;
-}
-
-.signup-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333; 
-}
-
-.signup-form {
+/* Header row with logo and toggle button */
+.sidebar-header-row {
   display: flex;
-  flex-direction: column;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: row;
   align-items: center;
-  margin-bottom: 15px;
+  justify-content: space-between;
+  margin-bottom: 22px; 
+}
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ff9442;
+  letter-spacing: 1px;
+}
+.sidebar-logo-img {
+  width: 32px;
+  height: 32px;
 }
 
-.form-group label {
-  width: 100px;
-  margin-right: 10px;
-  font-weight: bold;
-  color: #222; 
-}
-
-.form-group input {
-  flex: 1;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #ffffff; 
-  color: #000000; }
-
-.form-group input::placeholder {
-  color: #888888; 
-}
-
-.form-group input:focus {
-  outline: none;
-  border-color: #007bff; 
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-.signup-button {
-  padding: 10px 20px;
-  background-color: #007bff; 
-  color: white;
+/* New chat button styled like Dialogix */
+.new-chat-btn {
+  background: #ff9442;
+  color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
+  padding: 12px 0;
+  font-weight: bold;
+  font-size: 1.05rem;
+  margin-bottom: 15px;
+  transition: background 0.18s;
   cursor: pointer;
-  margin-top: 10px;
+}
+.new-chat-btn:hover {
+  background: #ea7f18;
 }
 
-.signup-button:hover {
-  background-color: #0056b3;
+/* Chat list as usual */
+.chat-list {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 16px;
+}
+
+.chat-item {
+  padding: 12px 20px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #232529;
+  color: #fff;
+  border: none;
+  transition: background 0.2s, color 0.2s;
+}
+.chat-item.active, .chat-item:hover {
+  background: #fff;
+  color: #ff9442;
+}
+
+/* User info at the bottom */
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-top: auto;
+  border-top: 1px solid #292a2c;
+  padding-top: 16px;
+  margin-bottom: 10px;
+}
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+}
+.user-name { font-weight: bold; font-size: 1rem; color: #fff; }
+
+.sidebar-toggle {
+  cursor: pointer;
+  color: #ff9442;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  padding: 0 6px;
+  margin: 0;
+  outline: none;
+  transition: color 0.2s;
+}
+.sidebar-toggle:hover {
+  color: #ea7f18;
+}
+
+.sidebar.collapsed .sidebar-logo,
+.sidebar.collapsed .new-chat-btn,
+.sidebar.collapsed .chat-list,
+.sidebar.collapsed .sidebar-user {
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  overflow: hidden;
+}
+.sidebar.collapsed {
+  padding: 18px 4px 0 4px;
 }

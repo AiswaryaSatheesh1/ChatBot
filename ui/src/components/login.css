@@ -19,7 +19,7 @@ body, html {
   max-width: 400px;
   width: 100%;
   padding: 30px;
-  background-color: #222f3e;
+  background-color: #000000;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   font-family: Arial, sans-serif;
   border-radius: 10px;
@@ -27,10 +27,11 @@ body, html {
 
 
 
+
 .signup-container h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #fbfbfb; 
+  color: #ff9442; 
 }
 
 .signup-form {
@@ -43,21 +44,22 @@ body, html {
   flex-direction: row;
   align-items: center;
   margin-bottom: 15px;
+  /* border-radius: 10px; */
 }
 
 .form-group label {
   width: 100px;
   margin-right: 10px;
   font-weight: bold;
-  color: #ffffff; 
+  color: #ff9442; 
 }
 
 .form-group input {
   flex: 1;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #ff9442;
   border-radius: 4px;
-  background-color: #ffffff; 
+  background-color: wheat; 
   color: #000000; }
 
 .form-group input::placeholder {
@@ -75,7 +77,7 @@ body, html {
 
 .signup-button {
   padding: 10px 10px;
-  background-color: #f8f8f8; 
+  background-color: #ff9442; 
   color: rgb(0, 0, 0);
   font-size:medium;
   border: none;

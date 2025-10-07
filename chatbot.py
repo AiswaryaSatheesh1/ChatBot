@@ -1,7 +1,7 @@
 import openai
 import os
 
-client = openai.OpenAI(api_key="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")
+client = openai.OpenAI(api_key= os.getenv("CHATBOT_API_KEY")) 
 
 # Chat history
 chat_history = []

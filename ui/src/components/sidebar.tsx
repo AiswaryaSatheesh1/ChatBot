@@ -13,15 +13,19 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({
-  chats, currentChat, onSelectChat, onNewChat, isOpen, toggleSidebar,
+  chats, currentChat, onSelectChat, onNewChat, isOpen, toggleSidebar
 }) => {
   return (
     <div className={`sidebar${isOpen ? "" : " collapsed"}`}>
-      <div className={`sidebar${isOpen ? "" : " collapsed"}`}>
-      <button className="sidebar-toggle" onClick={toggleSidebar} aria-label="Toggle sidebar">
-        {isOpen ? "⇤" : "⇥"}
-      </button>
-      <button className="new-chat-btn" onClick={onNewChat}>+</button>
+      <div className="sidebar-header-row">
+        <div className="sidebar-logo">
+          <span>Robo 🦾</span>
+        </div>
+        <button className="sidebar-toggle" onClick={toggleSidebar} aria-label="Toggle sidebar">
+          {isOpen ? "⇤" : "⇥"}
+        </button>
+      </div>
+      <button className="new-chat-btn" onClick={onNewChat}>+ New Chat</button>
       <div className="chat-list">
         {chats.length === 0 ? (
           <p style={{ color: "#9ca3af", padding: "16px" }}>No chats yet</p>
@@ -39,12 +43,15 @@ const Sidebar: React.FC<SidebarProps> = ({
             </div>
           ))
         )}
-      </div >
       </div>
-      
-      
-      
+      <div className="sidebar-user">
+        <div>
+          <span className="user-name">👤</span>
+        
+        </div>
+      </div>
     </div>
   );
 };
+
 export default Sidebar;
