@@ -7,5 +7,9 @@ pydantic[email]
 passlib
 argon2-cffi
 python-jose[cryptography]
+python-dotenv
+requests
+os
+transformers
 
 

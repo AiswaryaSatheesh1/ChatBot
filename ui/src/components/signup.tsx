@@ -36,6 +36,8 @@ const Signup: React.FC = () => {
   };
 
   return (
+        <div className="signup-wrapper">
+
     <div className="signup-container">
       <h2>Signup</h2>
       <form className="signup-form" onSubmit={handleSubmit}>
@@ -74,7 +76,7 @@ const Signup: React.FC = () => {
         </button>
        <div style={{ marginTop: "10px" }}>
  
-  <Link to="/login" style={{ color: "blue", cursor: "pointer" }}>
+  <Link to="/login" style={{ color: "white", cursor: "pointer" }}>
     Login
   </Link>
 </div>
@@ -83,6 +85,7 @@ const Signup: React.FC = () => {
       {message && <p style={{ color: message.startsWith("✅") ? "green" : "red" }}>
   {message}
 </p>}
+    </div>
     </div>
   );
 };

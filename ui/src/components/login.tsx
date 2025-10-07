@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 
 
 import "./login.css";
@@ -9,6 +9,7 @@ const Login: React.FC = () => {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   
+   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault();
@@ -24,9 +25,13 @@ const Login: React.FC = () => {
         console.log("Status:", res.status, "Body:", data);
 
   
-        if (res.ok) {
+        if (res.ok && data.message === "Login successful") {
+           localStorage.setItem("token", data.token);
+            localStorage.setItem("user", JSON.stringify(data.user));
+
           setMessage("✅ Sign in successful!");
            console.log("User info:", data.user);
+             navigate("/chat");
            } else {
         setMessage(`❌ ${data.detail}`);
       }
@@ -39,6 +44,7 @@ const Login: React.FC = () => {
   
 
   return (
+    <div className="signup-wrapper">
     <div className="signup-container">
       <h2>Login to your Account</h2>
       <form className="signup-form" onSubmit={handleSubmit}>
@@ -64,15 +70,17 @@ const Login: React.FC = () => {
         <button type="submit" className="signup-button">
          Login
         </button>
-        
-  <Link to="/signup" style={{ color: "blue", cursor: "pointer" }}>
+      <div className="sp">  
+  <Link to="/signup" style={{ color: "WHITE", cursor: "pointer", marginBottom: "10px" }}>
     Sign up
   </Link>
+  </div>
       </form>
       {message && <p style={{ color: message.startsWith("✅") ? "green" : "red" }}>
   {message}
 </p>}
 
+    </div>
     </div>
   );
 };

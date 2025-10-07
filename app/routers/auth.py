@@ -2,9 +2,9 @@ from fastapi import APIRouter, Depends, HTTPException
 from app.database import users_collection
 from argon2 import PasswordHasher
 from argon2.exceptions import VerifyMismatchError 
+from app.utils.authutils import create_access_token
 from .. import schemas
-
-
+from datetime import timedelta
 
 router = APIRouter(tags=["Auth"])
 
@@ -39,12 +39,20 @@ async def login(req: schemas.UserLogin):
       except VerifyMismatchError:
         raise HTTPException(status_code=400, detail="Invalid username or password")
 
-   
+      
+      access_token_expires = timedelta(minutes=30)
+      access_token = create_access_token(
+        data={"sub": user["username"]},
+        expires_delta=access_token_expires
+      )
+
       return {
         "message": "Login successful",
         "user": {
             "username": user["username"],
-            "name": user["name"]
-        }
-    }
+            "name": user["name"] 
+        },
+        "token": access_token
+       }
 
+ 

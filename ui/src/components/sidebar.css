@@ -1,0 +1,79 @@
+/* Sidebar.css */
+/* ...everything above stays... */
+
+.sidebar {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  padding: 18px 12px 0 12px;
+   width: 100%;
+  transition: width 0.3s, padding 0.3s;
+  box-sizing: border-box;
+}
+.sidebar.collapsed .sidebar-header,
+.sidebar.collapsed .new-chat-btn,
+.sidebar.collapsed .chat-list {
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  overflow: hidden;
+}
+.sidebar.collapsed {
+    padding: 18px 4px 0 4px;
+
+}
+
+.sidebar-header,
+.new-chat-btn,
+.chat-list {
+  transition: opacity 0.2s;
+}
+
+
+.sidebar.collapsed .sidebar-header,
+.sidebar.collapsed .new-chat-btn{
+  background-color: #fff;
+}
+.sidebar.collapsed .chat-list {
+  background-color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  overflow: hidden;
+}
+
+.sidebar-toggle {
+  margin-top: -40px;
+  cursor: pointer;
+  color: #c8d6e5;
+  font-size: 1.5rem;
+  background: none;
+  outline: none;
+  border: none;
+  border-color: rgb(21, 239, 166);
+  align-self: flex-start;
+  margin-left: -25px;
+  transition: color 0.2s;
+
+}
+.sidebar-toggle:hover {
+  color: #6ec6ff;
+}
+
+.sidebar-toggle:focus {
+  outline: none;
+}
+.new-chat-btn {
+  /* padding: 12px 0; */
+  background: linear-gradient(90deg, #ffffff, #ffffff);
+  border-radius: 25px;
+  /* font-weight: 500; */
+  
+  color: #000000; 
+  /* cursor: pointer; */
+  /* font-size: 1.01rem; */
+  /* margin-bottom: 20px; */
+  /* transition: background 0.2s; */
+}
+

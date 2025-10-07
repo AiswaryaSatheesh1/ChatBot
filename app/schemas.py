@@ -7,3 +7,7 @@ class UserCreate(BaseModel):
 class UserLogin(BaseModel):
     username: EmailStr
     password: str
+class ChatRequest(BaseModel):
+    message: str
+class ChatResponse(BaseModel):
+    reply: str
