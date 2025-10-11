@@ -3,7 +3,6 @@ import os
 
 client = openai.OpenAI(api_key= os.getenv("CHATBOT_API_KEY")) 
 
-# Chat history
 chat_history = []
 
 print("Welcome to AI Chatbot! Type 'exit' to quit.\n")

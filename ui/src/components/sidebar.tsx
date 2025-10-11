@@ -2,7 +2,7 @@ import React from "react";
 import "./Sidebar.css";
 
 interface Message { sender: string; text: string; }
-interface ChatItem { id: number; title: string; messages: Message[];}
+interface ChatItem { id: number; title: string; messages: Message[]; }
 interface SidebarProps {
   chats: ChatItem[];
   currentChat: number | null;
@@ -30,9 +30,9 @@ const Sidebar: React.FC<SidebarProps> = ({
         {chats.length === 0 ? (
           <p style={{ color: "#9ca3af", padding: "16px" }}>No chats yet</p>
         ) : (
-          chats.map((chat) => (
+          chats.map((chat, idx) => (
             <div
-              key={chat.id}
+              key={chat.id || idx}
               className={`chat-item ${currentChat === chat.id ? "active" : ""}`}
               onClick={() => onSelectChat(chat.id)}
               role="button"
@@ -45,10 +45,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         )}
       </div>
       <div className="sidebar-user">
-        <div>
-          <span className="user-name">👤</span>
-        
-        </div>
+        <span className="user-name">👤</span>
       </div>
     </div>
   );

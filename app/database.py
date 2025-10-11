@@ -6,3 +6,4 @@ client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_URL)
 
 db = client["aichatbot"] 
 users_collection = db["users"] 
+chats_collection = db["chats"]

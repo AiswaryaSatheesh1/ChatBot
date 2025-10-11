@@ -22,3 +22,4 @@ def get_ai_reply(user_message: str) -> str:
     # Decode tokens back to text
     reply = tokenizer.decode(output_ids[0], skip_special_tokens=True)
     return reply
+
